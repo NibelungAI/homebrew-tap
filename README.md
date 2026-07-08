@@ -3,11 +3,13 @@
 Homebrew cask for **Nibelung** — the native macOS hub / RBAC-aware operations launcher.
 
 ```sh
-brew install --cask nibelungai/tap/nibelung
+brew install --cask --no-quarantine nibelungai/tap/nibelung
 ```
 
-That's it. The app ships its own signed auto-updater, so it keeps itself current
-after the first install — this cask is `version :latest` and never needs bumping.
+`--no-quarantine` because the app is ad-hoc signed (not Apple-notarized); it lets
+Gatekeeper open it without a prompt. The app ships its own signed auto-updater, so
+it keeps itself current after the first install — this cask is `version :latest`
+and never needs bumping per release.
 
 ### Alternative (no Homebrew)
 

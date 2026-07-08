@@ -15,12 +15,10 @@ cask "nibelung" do
 
   app "Nibelung.app"
 
-  # Ad-hoc signed → clear the quarantine flag so Gatekeeper doesn't block launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Nibelung.app"],
-                   sudo: false
-  end
+  # NOTE: ad-hoc signed (not Apple-notarized), so install with --no-quarantine:
+  #   brew install --cask --no-quarantine nibelungai/tap/nibelung
+  # Otherwise Gatekeeper blocks first launch (right-click → Open, once).
+  # Kept declarative (no preflight/postflight) so the tap loads without `brew trust`.
 
   zap trash: [
     "~/Library/Application Support/biz.nibelung.desktop",
