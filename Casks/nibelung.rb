@@ -11,7 +11,7 @@ cask "nibelung" do
   # first install — the app keeps itself current after that. That's why this cask
   # is `version :latest` and never needs bumping per release.
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Nibelung.app"
 
