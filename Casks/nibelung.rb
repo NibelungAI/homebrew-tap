@@ -2,7 +2,7 @@ cask "nibelung" do
   version :latest
   sha256 :no_check
 
-  url "https://updates.nibelung.biz/Nibelung-latest.dmg"
+  url "https://get.nibelung.cloud/Nibelung-latest.dmg"
   name "Nibelung"
   desc "Native macOS app for the Nibelung team"
   homepage "https://nibelung.biz"
