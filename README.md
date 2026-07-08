@@ -23,7 +23,7 @@ HOMEBREW_CASK_OPTS="--no-quarantine" brew install --cask nibelungai/tap/nibelung
 Prefer not to use Homebrew? One line:
 
 ```sh
-curl -fsSL get.nibelung.cloud | bash
+curl -fsSL https://get.nibelung.cloud | bash
 ```
 
 > The app keeps itself up to date after the first install, so this cask is
