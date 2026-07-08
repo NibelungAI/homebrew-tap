@@ -15,10 +15,11 @@ cask "nibelung" do
 
   app "Nibelung.app"
 
-  # NOTE: ad-hoc signed (not Apple-notarized), so install with --no-quarantine:
-  #   brew install --cask --no-quarantine nibelungai/tap/nibelung
-  # Otherwise Gatekeeper blocks first launch (right-click → Open, once).
-  # Kept declarative (no preflight/postflight) so the tap loads without `brew trust`.
+  # NOTE: ad-hoc signed (not Apple-notarized). Install without the quarantine flag
+  # so Gatekeeper opens it without a prompt (Homebrew 6 removed the --no-quarantine
+  # CLI flag; use the env instead):
+  #   HOMEBREW_CASK_OPTS="--no-quarantine" brew install --cask nibelungai/tap/nibelung
+  # Skip it and macOS just asks you to right-click → Open once.
 
   zap trash: [
     "~/Library/Application Support/biz.nibelung.desktop",
