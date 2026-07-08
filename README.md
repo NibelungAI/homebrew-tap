@@ -1,37 +1,57 @@
-# Nibelung Homebrew Tap
+<div align="center">
 
-Homebrew cask for **Nibelung** — the native macOS hub / RBAC-aware operations launcher.
+# 🏔️ Nibelung
+
+**The native macOS app for the Nibelung team.**
+
+<sub>Homebrew tap · universal build · self-updating</sub>
+
+</div>
+
+---
+
+## Install
 
 ```sh
-# 1. one-time: Homebrew 6+ requires explicitly trusting third-party taps
+# one-time — Homebrew 6+ asks you to trust third-party taps
 brew trust nibelungai/tap
 
-# 2. install (--no-quarantine because the app is ad-hoc signed, not notarized)
+# install
 HOMEBREW_CASK_OPTS="--no-quarantine" brew install --cask nibelungai/tap/nibelung
 ```
 
-The app ships its own signed auto-updater, so it keeps itself current after the
-first install — this cask is `version :latest` and **never needs bumping per
-release**. `--no-quarantine` lets Gatekeeper open the ad-hoc-signed build without a
-prompt; skip it and macOS asks you to right-click → Open once.
-
-### Already installed it via the curl script?
-
-Let Homebrew adopt the existing app instead of reinstalling:
-
-```sh
-brew install --cask --adopt nibelungai/tap/nibelung
-```
-
-### No Homebrew? One-liner installer
+Prefer not to use Homebrew? One line:
 
 ```sh
 curl -fsSL https://updates.nibelung.biz/install.sh | bash
 ```
 
-### Uninstall
+> The app keeps itself up to date after the first install, so this cask is
+> `version :latest` and never needs a per-release bump. `--no-quarantine` lets
+> macOS open the build without a Gatekeeper prompt.
+
+## Update
+
+Nothing to do — Nibelung updates itself in the background. To pull the newest
+build immediately:
+
+```sh
+brew reinstall --cask nibelungai/tap/nibelung
+```
+
+## Uninstall
 
 ```sh
 brew uninstall --cask nibelung          # remove the app
-brew uninstall --zap --cask nibelung    # also wipe app data
+brew uninstall --zap --cask nibelung    # …and wipe local app data
 ```
+
+## Notes
+
+- **macOS 14 (Sonoma) or newer** · Apple silicon **and** Intel (universal).
+- Installed it another way already? Let Homebrew adopt it:
+  ```sh
+  brew install --cask --adopt nibelungai/tap/nibelung
+  ```
+
+<div align="center"><sub>© Nibelung</sub></div>

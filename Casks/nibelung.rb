@@ -4,7 +4,7 @@ cask "nibelung" do
 
   url "https://updates.nibelung.biz/Nibelung-latest.dmg"
   name "Nibelung"
-  desc "Nibelung team hub & RBAC-aware operations launcher"
+  desc "Native macOS app for the Nibelung team"
   homepage "https://nibelung.biz"
 
   # Ships its own signed (minisign) auto-updater, so Homebrew only performs the
